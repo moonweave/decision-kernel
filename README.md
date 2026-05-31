@@ -7,7 +7,7 @@
 Decision Kernel is three local Claude/Codex skills that make agent decisions
 inspectable before large diffs land.
 
-![Decision Kernel protocol strip](assets/decision-kernel-protocol-strip.png)
+<img src="assets/decision-kernel-mobile-card.png" alt="Decision Kernel compact card" width="340">
 
 </div>
 
@@ -57,6 +57,8 @@ Later in the same session:
 requires local repo context plus current sources before making the deletion call.
 
 ## Visual Model
+
+![Decision Kernel protocol strip](assets/decision-kernel-protocol-strip.png)
 
 ![Decision Kernel annotated hero](assets/decision-kernel-annotated-hero.png)
 
