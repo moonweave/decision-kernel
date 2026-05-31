@@ -11,6 +11,8 @@ A compact decision layer for agentic coding workflows.
 [![Codex](https://img.shields.io/badge/Codex-skills-black)](#install)
 [![License](https://img.shields.io/badge/license-MIT-green)](skills/anneal/LICENSE)
 
+![Decision Kernel overview](assets/decision-kernel-hero.png)
+
 </div>
 
 ## Why This Exists
@@ -135,6 +137,8 @@ exit code `2` and prints the blocker. Local validation still verifies the repo
 structure and installable skill files.
 
 ## Repository Layout
+
+![Decision Kernel architecture](assets/decision-kernel-architecture.png)
 
 ```text
 skills/
