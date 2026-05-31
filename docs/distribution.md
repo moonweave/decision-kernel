@@ -49,28 +49,40 @@ assets/decision-kernel-mobile-card.png
 
 ## Submission Queue
 
-Checked on 2026-06-01.
+Verified by web search on 2026-06-01. Targets below are the ones with corroborated
+public usage; earlier unverified entries (skills.re, agentskills.in, and several
+Priority-2 sites) were removed because no independent reference to them was found.
 
-Priority 1: direct repository import forms.
+> Reality check: in 2026 most skill directories **auto-index public GitHub repos**
+> rather than requiring a submission portal. The repo-side work already done
+> (search-friendly topics, README keywords, four valid `SKILL.md` files) is the
+> bulk of "getting listed." Manual submission below is optional acceleration.
 
-| Target | URL | Status | Action |
+> Safety: agent-skill registries have had malicious-submission incidents (the
+> ClawHub case), so reputable directories now security-scan submissions — good for
+> *you as a publisher*. When any site asks to "Sign in with GitHub," read the
+> OAuth scope: read-only (`read:user`, `public_repo`) is fine; decline anything
+> requesting full `repo` write, delete, or org permissions. You only need to hand
+> over a public repo URL.
+
+Priority 1: submit manually (highest-traffic, security-scanned).
+
+| Target | URL | Why | Action |
 | --- | --- | --- | --- |
-| agentskill.sh | https://agentskill.sh/submit | Direct GitHub repository import form visible. | Submit `https://github.com/moonweave/decision-kernel`. |
-| skills.re | https://skills.re/submit | Submit page available; may require sign-in before final publish. | Submit repo URL, verify scan result, finish after sign-in if prompted. |
-| Agent Skills CLI | https://agentskills.in | Home page advertises repo submission and marketplace indexing. | Submit repo URL from the home page submission panel. |
+| agentskill.sh | https://agentskill.sh/ | Largest indexed directory (100k+ skills), 12-category security scan, Product Hunt listed. | Submit `https://github.com/moonweave/decision-kernel`; check the OAuth scope before authorizing. |
+| skills.sh (Vercel) | https://skills.sh/ | Widely-referenced public skill directory. | Submit the repo URL if a submit path is offered; otherwise rely on auto-index. |
+| VoltAgent/awesome-agent-skills | https://github.com/VoltAgent/awesome-agent-skills | Curated GitHub list (1000+ skills). | Open a PR adding decision-kernel under the relevant category. |
 
 Final submission may require a browser session, account sign-in, or a visible
 confirmation step. Do not rely on undocumented API calls for these targets.
 
-Priority 2: directory/indexing targets.
+Priority 2: auto-indexing directories (likely no action needed).
 
-| Target | URL | Status | Action |
-| --- | --- | --- | --- |
-| AgentSkills | https://agentskills.to | Directory online; direct submit path not obvious from the public page. | Search site UI or contact maintainer if not auto-indexed. |
-| Claude Code Marketplace | https://www.claudemarketplace.net/skills | Directory online and indexing thousands of skills; direct submit path not obvious from public nav. | Check whether repo appears after indexing; otherwise use contact/advertise route. |
-| ClaudeSkills | https://www.claudeskills.co | Directory online. | Verify direct submission or indexing path manually. |
-| PolySkill | https://polyskill.ai | Site responded during earlier availability check. | Verify whether it accepts SKILL.md repos before spending time. |
-| SkillMesh | https://skillmesh.tech | Returned temporary bad gateway during earlier check. | Recheck later before submitting. |
+| Target | URL | Note |
+| --- | --- | --- |
+| claudemarketplaces.com | https://claudemarketplaces.com/ | Community directory, ~200k monthly visits, updated daily from GitHub — should pick the repo up automatically. |
+| Agensi | https://www.agensi.io/ | Security-scanned marketplace; optional publish flow if a listing is wanted. |
+| claudeskills.info / SkillsMP | https://claudeskills.info/ · https://skillsmp.com/ | Large directories that index GitHub repos; verify the listing appears after a week, submit only if a path exists. |
 
 ## Submission Notes
 
