@@ -38,7 +38,7 @@ https://github.com/moonweave/decision-kernel
 Release URL:
 
 ```text
-https://github.com/moonweave/decision-kernel/releases/tag/v0.1.0
+https://github.com/moonweave/decision-kernel/releases/tag/v0.1.1
 ```
 
 Primary image:
@@ -81,4 +81,3 @@ Before submitting to any directory, confirm:
 - `python3 scripts/validate.py` passes.
 - `python3 scripts/smoke.py --local-only` passes.
 - The latest release exists and includes the current onboarding docs.
-
