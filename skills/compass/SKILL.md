@@ -3,6 +3,10 @@ name: compass
 description: User-invoked mid-session audit skill. Detects (1) drift between current task and original session intent via transcript analysis, and (2) codebase rot — git uncommitted accumulation, test/lint state from cached artifacts, file bloat, TODO accumulation, circular dependencies, module boundary degradation. Manually triggered via `/compass` only — never auto-invoked. Use when the user types `/compass` optionally followed by a baseline intent string. Without arguments, derive baseline via cascade — most recent spec (24h), then task-init heuristic, then explicit user prompt. Never use the literal first user message of the transcript as baseline.
 disable-model-invocation: true
 argument-hint: "[baseline intent]"
+allowed-tools:
+  - Read
+  - Bash
+  - Grep
 ---
 
 # /compass — Mid-Session Drift & Rot Audit
