@@ -37,7 +37,9 @@ Common behavior belongs in repository scripts, not in runtime dependencies
 between skill folders. A skill folder should remain installable by itself.
 
 Use `scripts/validate.py` for structural checks, `scripts/install.py` for local
-deployment, and `scripts/smoke.py` for repeatable smoke verification.
+deployment previews, and `scripts/smoke.py` for repeatable smoke verification.
+`scripts/install.py` mutates local skill directories only when called with
+`--apply`.
 
 ## Migration Policy
 

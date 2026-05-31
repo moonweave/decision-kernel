@@ -9,7 +9,7 @@ A compact decision layer for agentic coding workflows.
 [![Status](https://img.shields.io/badge/status-local--first-blue)](#status)
 [![Claude](https://img.shields.io/badge/Claude-Code%20skills-black)](#install)
 [![Codex](https://img.shields.io/badge/Codex-skills-black)](#install)
-[![License](https://img.shields.io/badge/license-MIT-green)](skills/anneal/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 ![Decision Kernel annotated hero](assets/decision-kernel-annotated-hero.png)
 
@@ -17,29 +17,48 @@ A compact decision layer for agentic coding workflows.
 
 ## Why This Exists
 
-Agents are fast, but speed makes bad judgment expensive. A coding agent can
-commit to the wrong UI direction, keep working after the session has drifted, or
-make a technical call from one weak source.
-
-Decision Kernel gives agents a small operating layer for those moments:
+Agents fail most often at judgment boundaries: committing to the wrong direction,
+continuing after drift, or deciding from weak evidence. Decision Kernel gives
+those moments a short local protocol:
 
 1. **Measure the fork** before building the wrong thing.
 2. **Audit drift and rot** before a long session compounds mistakes.
 3. **Decide with evidence** instead of confident guesswork.
 
-This repository packages those moves as local Claude/Codex skills.
-
-## Product Promise
-
-Decision Kernel is for builders who want agents to stay autonomous without
-becoming arbitrary. It does not replace engineering judgment; it forces that
-judgment through a short, inspectable protocol.
+This repository packages those protocols as local Claude/Codex skills. It does
+not replace engineering judgment; it makes that judgment inspectable.
 
 | Moment | Skill | Product Job |
 | --- | --- | --- |
 | "Which direction should we build?" | [`anneal`](skills/anneal) | Turn alternatives into a cheap measurable comparison. |
 | "Has this session gone off-track?" | [`compass`](skills/compass) | Check drift, accumulated work, stale evidence, and codebase rot. |
 | "What is the right technical choice?" | [`decide`](skills/decide) | Combine local project context with current source-backed evidence. |
+
+## Example Workflow
+
+A coding agent is about to build an inventory dashboard and must pick between a
+table, graph, or card layout.
+
+```text
+/anneal choose the primary UI direction for a developer inventory dashboard:
+table vs graph vs cards
+```
+
+The protocol forces the agent to define a task-based fitness sheet before
+building: time to find an owner, steps to spot risky inventory, and coverage of
+relationship questions. If the rough table scores highest, the agent builds the
+table first instead of spending the session polishing a graph that fails the
+actual task.
+
+Later in the same session:
+
+```text
+/compass harden local Claude/Codex skills
+/decide should this stale spec file be deleted?
+```
+
+`compass` checks whether the work still matches the session intent. `decide`
+requires local repo context plus current sources before making the deletion call.
 
 ## The Three Protocols
 
@@ -91,26 +110,45 @@ git clone https://github.com/moonweave/decision-kernel.git
 cd decision-kernel
 ```
 
-Install for Claude Code:
+Preview Claude Code install:
 
 ```bash
 python3 scripts/install.py --target claude
 ```
 
-Install for Codex:
+Apply Claude Code install:
+
+```bash
+python3 scripts/install.py --target claude --apply
+```
+
+Preview Codex install:
 
 ```bash
 python3 scripts/install.py --target codex
 ```
 
-Install both:
+Apply Codex install:
+
+```bash
+python3 scripts/install.py --target codex --apply
+```
+
+Preview both:
 
 ```bash
 python3 scripts/install.py --target all
 ```
 
-Claude installs are symlinks to this repository. Codex installs are generated
-copies with Codex-compatible frontmatter.
+Apply both:
+
+```bash
+python3 scripts/install.py --target all --apply
+```
+
+Without `--apply`, the installer only prints the planned changes. Claude installs
+are symlinks to this repository. Codex installs are generated copies with
+Codex-compatible frontmatter.
 
 ## Validate
 
@@ -124,6 +162,12 @@ Run local smoke checks:
 
 ```bash
 python3 scripts/smoke.py --local-only
+```
+
+Run installer behavior tests:
+
+```bash
+python3 -m unittest tests/test_install.py -v
 ```
 
 Attempt live Claude Code smoke checks:
@@ -193,7 +237,7 @@ python3 scripts/smoke.py --local-only
 Then reinstall locally:
 
 ```bash
-python3 scripts/install.py --target all
+python3 scripts/install.py --target all --apply
 ```
 
 See [docs/architecture.md](docs/architecture.md) for the source-of-truth and

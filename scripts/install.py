@@ -47,30 +47,38 @@ def keep_name_description(raw: str) -> str:
     return "\n".join(kept)
 
 
-def backup_existing(path: Path) -> None:
+def backup_existing(path: Path, *, apply: bool) -> None:
     if not path.exists() and not path.is_symlink():
         return
     if path.is_symlink() or path.is_file():
-        path.unlink()
+        verb = "replace" if apply else "would replace"
+        print(f"{verb} existing link/file: {path}")
+        if apply:
+            path.unlink()
         return
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     backup_dir = path.parent / ".backup"
-    backup_dir.mkdir(parents=True, exist_ok=True)
     destination = backup_dir / f"{path.name}-{timestamp}"
-    shutil.move(str(path), str(destination))
-    print(f"backed up {path} -> {destination}")
+    verb = "backed up" if apply else "would back up"
+    print(f"{verb} {path} -> {destination}")
+    if apply:
+        backup_dir.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(path), str(destination))
 
 
-def install_claude() -> None:
-    CLAUDE_DIR.mkdir(parents=True, exist_ok=True)
+def install_claude(*, apply: bool) -> None:
+    if apply:
+        CLAUDE_DIR.mkdir(parents=True, exist_ok=True)
     for name in SKILLS:
         source = ROOT / "skills" / name
         target = CLAUDE_DIR / name
         if not source.exists():
             raise FileNotFoundError(source)
-        backup_existing(target)
-        target.symlink_to(source)
-        print(f"claude {name}: {target} -> {source}")
+        backup_existing(target, apply=apply)
+        if apply:
+            target.symlink_to(source)
+        verb = "linked" if apply else "would link"
+        print(f"claude {name}: {verb} {target} -> {source}")
 
 
 def ignore_names(_: str, names: list[str]) -> set[str]:
@@ -85,27 +93,39 @@ def sanitize_codex_skill(skill_dir: Path) -> None:
     skill_path.write_text(sanitized)
 
 
-def install_codex() -> None:
-    CODEX_DIR.mkdir(parents=True, exist_ok=True)
+def install_codex(*, apply: bool) -> None:
+    if apply:
+        CODEX_DIR.mkdir(parents=True, exist_ok=True)
     for name in SKILLS:
         source = ROOT / "skills" / name
         target = CODEX_DIR / name
         if not source.exists():
             raise FileNotFoundError(source)
-        backup_existing(target)
-        shutil.copytree(source, target, ignore=ignore_names)
-        sanitize_codex_skill(target)
-        print(f"codex {name}: copied sanitized skill to {target}")
+        backup_existing(target, apply=apply)
+        if apply:
+            shutil.copytree(source, target, ignore=ignore_names)
+            sanitize_codex_skill(target)
+        verb = "copied" if apply else "would copy"
+        print(f"codex {name}: {verb} sanitized skill to {target}")
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description="Preview or apply local Decision Kernel skill installs."
+    )
     parser.add_argument("--target", choices=("claude", "codex", "all"), required=True)
+    parser.add_argument(
+        "--apply",
+        action="store_true",
+        help="Mutate ~/.claude/skills and/or ~/.codex/skills. Without this flag, only print the planned changes.",
+    )
     args = parser.parse_args()
+    if not args.apply:
+        print("dry run: no files will be changed; re-run with --apply to install")
     if args.target in {"claude", "all"}:
-        install_claude()
+        install_claude(apply=args.apply)
     if args.target in {"codex", "all"}:
-        install_codex()
+        install_codex(apply=args.apply)
 
 
 if __name__ == "__main__":
