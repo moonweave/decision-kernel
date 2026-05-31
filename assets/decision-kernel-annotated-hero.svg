@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 676" width="1200" height="676" role="img" aria-labelledby="title desc">
+  <title id="title">Decision Kernel annotated hero</title>
+  <desc id="desc">Decision Kernel maps three risky agent moments to three local skills: anneal, compass, and decide.</desc>
+  <style>
+    text {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      fill: #111827;
+    }
+    .title { font-size: 46px; font-weight: 750; }
+    .subtitle { font-size: 20px; fill: #374151; }
+    .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0; fill: #2563eb; }
+    .label { font-size: 18px; font-weight: 700; }
+    .small { font-size: 14px; fill: #6b7280; }
+    .mono { font-family: "SF Mono", Menlo, Consolas, monospace; }
+    .white { fill: #ffffff; }
+    .mutedWhite { fill: #d1d5db; }
+  </style>
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.16"/>
+    </filter>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/>
+    </marker>
+  </defs>
+
+  <image href="decision-kernel-generated-hero.png" x="0" y="0" width="1200" height="676" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="0" y="0" width="1200" height="676" fill="#ffffff" opacity="0.18"/>
+
+  <g filter="url(#softShadow)">
+    <rect x="58" y="58" width="474" height="560" rx="22" fill="#ffffff" opacity="0.94"/>
+  </g>
+  <g transform="translate(90,96)">
+    <text x="0" y="0" class="eyebrow">LOCAL AGENT JUDGMENT LAYER</text>
+    <text x="0" y="58" class="title">Decision Kernel</text>
+    <text x="0" y="94" class="subtitle">Three protocols for the moments</text>
+    <text x="0" y="122" class="subtitle">where agents usually go wrong.</text>
+
+    <g transform="translate(0,176)">
+      <rect x="0" y="0" width="410" height="78" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+      <circle cx="38" cy="39" r="18" fill="#2563eb"/>
+      <text x="38" y="45" text-anchor="middle" class="white" font-size="17" font-weight="800">1</text>
+      <text x="72" y="31" class="label">Fork: which direction?</text>
+      <text x="72" y="56" class="small"><tspan class="mono">/anneal</tspan> measures candidates before build work.</text>
+    </g>
+
+    <g transform="translate(0,276)">
+      <rect x="0" y="0" width="410" height="78" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+      <circle cx="38" cy="39" r="18" fill="#16a34a"/>
+      <text x="38" y="45" text-anchor="middle" class="white" font-size="17" font-weight="800">2</text>
+      <text x="72" y="31" class="label">Drift: still on task?</text>
+      <text x="72" y="56" class="small"><tspan class="mono">/compass</tspan> audits session drift and repo rot.</text>
+    </g>
+
+    <g transform="translate(0,376)">
+      <rect x="0" y="0" width="410" height="78" rx="12" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.5"/>
+      <circle cx="38" cy="39" r="18" fill="#9333ea"/>
+      <text x="38" y="45" text-anchor="middle" class="white" font-size="17" font-weight="800">3</text>
+      <text x="72" y="31" class="label">Call: enough evidence?</text>
+      <text x="72" y="56" class="small"><tspan class="mono">/decide</tspan> gates technical choices by sources.</text>
+    </g>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="704" y="82" width="380" height="108" rx="18" fill="#111827" opacity="0.94"/>
+  </g>
+  <text x="732" y="124" class="white" font-size="21" font-weight="750">The center is not a model.</text>
+  <text x="732" y="154" class="mutedWhite" font-size="16">It is a judgment gate before large diffs land.</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="735" y="482" width="340" height="98" rx="16" fill="#ffffff" opacity="0.94"/>
+  </g>
+  <text x="762" y="522" font-size="20" font-weight="750">Install as local skills</text>
+  <text x="762" y="550" class="small"><tspan class="mono">~/.claude/skills</tspan> symlinks + <tspan class="mono">~/.codex/skills</tspan> copies</text>
+
+  <path d="M 532 310 C 606 284, 670 278, 724 250" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <path d="M 532 384 C 628 390, 694 402, 744 446" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <path d="M 532 476 C 620 512, 686 536, 734 536" fill="none" stroke="#9333ea" stroke-width="3" marker-end="url(#arrow-purple)"/>
+</svg>
