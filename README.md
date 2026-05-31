@@ -88,8 +88,8 @@ useful-done (a real consumer gets value), and reports a stale ROADMAP claim or a
 README that contradicts its own scorecard rather than rubber-stamping "done."
 
 See [docs/examples](docs/examples) for concrete representative runs covering
-all three protocols: measurable direction choice, session drift audit, and
-evidence-gated technical decision.
+the protocols: evidence-gated choice, measurable direction fork, session drift
+audit, and the useful-done gate at the finish line.
 
 ## Visual Model
 

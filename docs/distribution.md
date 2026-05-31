@@ -1,7 +1,7 @@
 # Distribution Checklist
 
 Decision Kernel should be discoverable as a small, practical toolkit for agent
-decision quality, not as three disconnected prompt snippets.
+decision quality, not as four disconnected prompt snippets.
 
 ## Listing Copy
 
@@ -14,19 +14,19 @@ Decision Kernel
 One-line description:
 
 ```text
-Claude Code and Codex skills for measurable forks, session drift audits, and evidence-gated technical decisions.
+Local Claude Code & Codex agent skills for evidence-gated decisions, measurable build-direction forks, mid-session drift audits, and an honest done-gate.
 ```
 
 Short description:
 
 ```text
-Decision Kernel packages three local agent skills: anneal measures competing directions before implementation, compass audits long sessions for drift and repo rot, and decide makes source-backed technical choices from local context plus current evidence.
+Decision Kernel packages four local agent skills: decide makes source-backed technical choices from local context plus current evidence, anneal measures competing directions before implementation, compass audits long sessions for drift and repo rot, and done-gate separates built-done (tests pass) from useful-done (a real consumer gets value) at the finish line.
 ```
 
 Tags:
 
 ```text
-Claude Code, Codex, agent skills, AI agents, coding agents, decision making, developer tools, prompt engineering
+Claude Code, Codex, Claude skills, Codex skills, agent skills, AI agents, coding agents, decision making, drift audit, done gate, developer tools, prompt engineering
 ```
 
 Primary URL:
@@ -81,7 +81,8 @@ Priority 2: directory/indexing targets.
 - Link the concrete example:
   `docs/examples/`.
 - Mention that the standalone `anneal-skill`, `compass-skill`, and
-  `decide-skill` repos are legacy mirrors.
+  `decide-skill` repos are legacy mirrors. (done-gate ships only inside this
+  monorepo — there is no standalone done-gate repo to confuse it with.)
 - Use [launch-copy.md](launch-copy.md) for social posts and directory comments.
 
 ## Submission Payload
@@ -95,9 +96,10 @@ https://github.com/moonweave/decision-kernel
 Direct skill URLs:
 
 ```text
+https://github.com/moonweave/decision-kernel/tree/main/skills/decide
 https://github.com/moonweave/decision-kernel/tree/main/skills/anneal
 https://github.com/moonweave/decision-kernel/tree/main/skills/compass
-https://github.com/moonweave/decision-kernel/tree/main/skills/decide
+https://github.com/moonweave/decision-kernel/tree/main/skills/done-gate
 ```
 
 Example URL:
