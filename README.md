@@ -5,7 +5,9 @@
 **A judgment gate for coding agents.**
 
 Decision Kernel is three local Claude/Codex skills that make agent decisions
-inspectable before large diffs land.
+inspectable before large diffs land. It is built for Claude Code and Codex
+users who want agent decision-making, drift audits, and evidence-gated
+technical decisions to happen inside the repo instead of in vague chat.
 
 <img src="assets/decision-kernel-mobile-card.png" alt="Decision Kernel compact card" width="340">
 
@@ -22,13 +24,34 @@ those moments a short local protocol:
 3. **Decide with evidence** instead of confident guesswork.
 
 This repository packages those protocols as local Claude/Codex skills. It does
-not replace engineering judgment; it makes that judgment inspectable.
+not replace engineering judgment; it makes that judgment inspectable. Search
+terms that describe the project plainly: agent skills, Claude Code skills,
+Codex skills, coding-agent workflows, decision gates, drift audits, and
+evidence-backed technical choices.
 
 | Moment | Skill | Product Job |
 | --- | --- | --- |
 | "Which direction should we build?" | [`anneal`](skills/anneal) | Turn alternatives into a cheap measurable comparison. |
 | "Has this session gone off-track?" | [`compass`](skills/compass) | Check drift, accumulated work, stale evidence, and codebase rot. |
 | "What is the right technical choice?" | [`decide`](skills/decide) | Combine local project context with current source-backed evidence. |
+
+## Quick Start
+
+Install both Claude Code and Codex skill copies:
+
+```bash
+git clone https://github.com/moonweave/decision-kernel.git
+cd decision-kernel
+python3 scripts/install.py --target all --apply
+```
+
+Then invoke the protocols when an agent is about to make a judgment-heavy move:
+
+```text
+/anneal choose between table, graph, and cards for an inventory dashboard
+/compass audit this session against the original goal
+/decide should this project use a src layout?
+```
 
 ## Example Workflow
 
@@ -55,6 +78,10 @@ Later in the same session:
 
 `compass` checks whether the work still matches the session intent. `decide`
 requires local repo context plus current sources before making the deletion call.
+
+See [docs/examples/anneal-inventory-dashboard.md](docs/examples/anneal-inventory-dashboard.md)
+for a concrete representative run with a fitness sheet, candidate scores, and
+the resulting implementation direction.
 
 ## Visual Model
 
@@ -201,6 +228,8 @@ tests/smoke/
   decide.md
 docs/
   architecture.md
+  distribution.md
+  examples/
   product-brief.md
   skill-catalog.md
 ```
@@ -218,6 +247,9 @@ still early:
 
 The source of truth is this monorepo. Older standalone skill repos are legacy
 mirrors and should not receive new development.
+
+For public listing and discovery work, see
+[docs/distribution.md](docs/distribution.md).
 
 ## Development
 
