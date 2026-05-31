@@ -11,7 +11,7 @@ A compact decision layer for agentic coding workflows.
 [![Codex](https://img.shields.io/badge/Codex-skills-black)](#install)
 [![License](https://img.shields.io/badge/license-MIT-green)](skills/anneal/LICENSE)
 
-![Decision Kernel overview](assets/decision-kernel-hero.png)
+![Decision Kernel generated hero](assets/decision-kernel-generated-hero.png)
 
 </div>
 
