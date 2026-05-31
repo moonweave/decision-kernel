@@ -79,9 +79,9 @@ Later in the same session:
 `compass` checks whether the work still matches the session intent. `decide`
 requires local repo context plus current sources before making the deletion call.
 
-See [docs/examples/anneal-inventory-dashboard.md](docs/examples/anneal-inventory-dashboard.md)
-for a concrete representative run with a fitness sheet, candidate scores, and
-the resulting implementation direction.
+See [docs/examples](docs/examples) for concrete representative runs covering
+all three protocols: measurable direction choice, session drift audit, and
+evidence-gated technical decision.
 
 ## Visual Model
 
@@ -230,6 +230,7 @@ docs/
   architecture.md
   distribution.md
   examples/
+  launch-copy.md
   product-brief.md
   skill-catalog.md
 ```

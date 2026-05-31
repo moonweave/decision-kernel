@@ -38,7 +38,7 @@ https://github.com/moonweave/decision-kernel
 Release URL:
 
 ```text
-https://github.com/moonweave/decision-kernel/releases/tag/v0.1.1
+https://github.com/moonweave/decision-kernel/releases/tag/v0.1.2
 ```
 
 Primary image:
@@ -47,19 +47,30 @@ Primary image:
 assets/decision-kernel-mobile-card.png
 ```
 
-## Submission Targets
+## Submission Queue
 
-These sites responded during a lightweight availability check on 2026-05-31:
+Checked on 2026-06-01.
 
-- https://agentskills.to
-- https://claudemarketplace.net
-- https://claudeskills.co
-- https://polyskill.ai
+Priority 1: direct repository import forms.
 
-This target returned a temporary bad gateway during the same check, so verify
-again before submitting:
+| Target | URL | Status | Action |
+| --- | --- | --- | --- |
+| agentskill.sh | https://agentskill.sh/submit | Direct GitHub repository import form visible. | Submit `https://github.com/moonweave/decision-kernel`. |
+| skills.re | https://skills.re/submit | Submit page available; may require sign-in before final publish. | Submit repo URL, verify scan result, finish after sign-in if prompted. |
+| Agent Skills CLI | https://agentskills.in | Home page advertises repo submission and marketplace indexing. | Submit repo URL from the home page submission panel. |
 
-- https://skillmesh.tech
+Final submission may require a browser session, account sign-in, or a visible
+confirmation step. Do not rely on undocumented API calls for these targets.
+
+Priority 2: directory/indexing targets.
+
+| Target | URL | Status | Action |
+| --- | --- | --- | --- |
+| AgentSkills | https://agentskills.to | Directory online; direct submit path not obvious from the public page. | Search site UI or contact maintainer if not auto-indexed. |
+| Claude Code Marketplace | https://www.claudemarketplace.net/skills | Directory online and indexing thousands of skills; direct submit path not obvious from public nav. | Check whether repo appears after indexing; otherwise use contact/advertise route. |
+| ClaudeSkills | https://www.claudeskills.co | Directory online. | Verify direct submission or indexing path manually. |
+| PolySkill | https://polyskill.ai | Site responded during earlier availability check. | Verify whether it accepts SKILL.md repos before spending time. |
+| SkillMesh | https://skillmesh.tech | Returned temporary bad gateway during earlier check. | Recheck later before submitting. |
 
 ## Submission Notes
 
@@ -68,9 +79,32 @@ again before submitting:
 - Mention dry-run install safety: `scripts/install.py` previews changes unless
   `--apply` is passed.
 - Link the concrete example:
-  `docs/examples/anneal-inventory-dashboard.md`.
+  `docs/examples/`.
 - Mention that the standalone `anneal-skill`, `compass-skill`, and
   `decide-skill` repos are legacy mirrors.
+- Use [launch-copy.md](launch-copy.md) for social posts and directory comments.
+
+## Submission Payload
+
+Repository:
+
+```text
+https://github.com/moonweave/decision-kernel
+```
+
+Direct skill URLs:
+
+```text
+https://github.com/moonweave/decision-kernel/tree/main/skills/anneal
+https://github.com/moonweave/decision-kernel/tree/main/skills/compass
+https://github.com/moonweave/decision-kernel/tree/main/skills/decide
+```
+
+Example URL:
+
+```text
+https://github.com/moonweave/decision-kernel/tree/main/docs/examples
+```
 
 ## Acceptance Check
 
