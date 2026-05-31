@@ -1,96 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" width="1100" height="680" role="img" aria-labelledby="title desc">
-  <title id="title">Decision Kernel architecture</title>
-  <desc id="desc">A local agent request flows through Decision Kernel protocols, then installs as Claude symlinks or Codex sanitized copies.</desc>
-  <style>
-    text {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      fill: #111827;
-    }
-    .title { font-size: 26px; font-weight: 700; }
-    .section { font-size: 13px; font-weight: 700; fill: #6b7280; }
-    .label { font-size: 16px; font-weight: 600; }
-    .small { font-size: 13px; fill: #6b7280; }
-    .mono { font-family: "SF Mono", Menlo, Consolas, monospace; }
-    .light { fill: #ffffff; }
-    .dim { fill: #9ca3af; }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
   <defs>
-    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
-    </marker>
-    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
-    </marker>
-    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/>
-    </marker>
-    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6e7681"/>
     </marker>
   </defs>
+  <rect width="1100" height="700" fill="#0d1117"/>
+  <text x="550" y="50" text-anchor="middle" fill="#e6edf3" font-size="24" font-weight="700">Decision Kernel — source of truth and install model</text>
 
-  <rect width="1100" height="680" fill="#ffffff"/>
-  <text x="56" y="58" class="title">Decision Kernel Architecture</text>
-  <text x="56" y="86" class="small">Source-of-truth skills, validation scripts, and generated local installs.</text>
+  <!-- monorepo box -->
+  <g transform="translate(80,90)">
+    <rect width="420" height="560" rx="14" fill="#0f1620" stroke="#30363d" stroke-width="1.5"/>
+    <text x="210" y="40" text-anchor="middle" fill="#e6edf3" font-size="19" font-weight="700">decision-kernel (source of truth)</text>
 
-  <rect x="48" y="118" width="190" height="440" rx="14" fill="#f8fafc" stroke="#d1d5db"/>
-  <text x="72" y="150" class="section">AGENT MOMENT</text>
-  <rect x="72" y="180" width="142" height="76" rx="8" fill="#ffffff" stroke="#d1d5db"/>
-  <text x="143" y="212" text-anchor="middle" class="label">fork</text>
-  <text x="143" y="234" text-anchor="middle" class="small">which path?</text>
-  <rect x="72" y="290" width="142" height="76" rx="8" fill="#ffffff" stroke="#d1d5db"/>
-  <text x="143" y="322" text-anchor="middle" class="label">drift</text>
-  <text x="143" y="344" text-anchor="middle" class="small">still on task?</text>
-  <rect x="72" y="400" width="142" height="76" rx="8" fill="#ffffff" stroke="#d1d5db"/>
-  <text x="143" y="432" text-anchor="middle" class="label">decision</text>
-  <text x="143" y="454" text-anchor="middle" class="small">enough evidence?</text>
+    <g transform="translate(30,66)">
+      <rect width="360" height="64" rx="10" fill="#161b22" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="20" y="28" fill="#f59e0b" font-size="16" font-weight="700">skills/decide/SKILL.md</text>
+      <text x="20" y="50" fill="#9aa4b2" font-size="13">evidence-gated decisions</text>
+    </g>
 
-  <rect x="310" y="118" width="420" height="440" rx="14" fill="#f8fafc" stroke="#d1d5db"/>
-  <text x="334" y="150" class="section">DECISION KERNEL</text>
-  <rect x="344" y="180" width="158" height="86" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
-  <text x="423" y="215" text-anchor="middle" class="label">anneal</text>
-  <text x="423" y="239" text-anchor="middle" class="small">measure before build</text>
-  <rect x="344" y="298" width="158" height="86" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
-  <text x="423" y="333" text-anchor="middle" class="label">compass</text>
-  <text x="423" y="357" text-anchor="middle" class="small">audit drift and rot</text>
-  <rect x="344" y="416" width="158" height="86" rx="10" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.5"/>
-  <text x="423" y="451" text-anchor="middle" class="label">decide</text>
-  <text x="423" y="475" text-anchor="middle" class="small">gate by evidence</text>
+    <g transform="translate(30,146)">
+      <rect width="360" height="64" rx="10" fill="#161b22" stroke="#22d3ee" stroke-width="1.5"/>
+      <text x="20" y="28" fill="#22d3ee" font-size="16" font-weight="700">skills/anneal/SKILL.md</text>
+      <text x="20" y="50" fill="#9aa4b2" font-size="13">measurable fork comparison</text>
+    </g>
 
-  <rect x="548" y="186" width="142" height="70" rx="8" fill="#ffffff" stroke="#d1d5db"/>
-  <text x="619" y="216" text-anchor="middle" class="label">validate.py</text>
-  <text x="619" y="238" text-anchor="middle" class="small">structure checks</text>
-  <rect x="548" y="306" width="142" height="70" rx="8" fill="#ffffff" stroke="#d1d5db"/>
-  <text x="619" y="336" text-anchor="middle" class="label">smoke.py</text>
-  <text x="619" y="358" text-anchor="middle" class="small">local and live tests</text>
-  <rect x="548" y="426" width="142" height="70" rx="8" fill="#ffffff" stroke="#d1d5db"/>
-  <text x="619" y="456" text-anchor="middle" class="label">install.py</text>
-  <text x="619" y="478" text-anchor="middle" class="small">local deployment</text>
+    <g transform="translate(30,226)">
+      <rect width="360" height="64" rx="10" fill="#161b22" stroke="#a3e635" stroke-width="1.5"/>
+      <text x="20" y="28" fill="#a3e635" font-size="16" font-weight="700">skills/compass/SKILL.md</text>
+      <text x="20" y="50" fill="#9aa4b2" font-size="13">session drift &amp; repo rot audit</text>
+    </g>
 
-  <rect x="800" y="118" width="250" height="440" rx="14" fill="#f8fafc" stroke="#d1d5db"/>
-  <text x="824" y="150" class="section">LOCAL INSTALLS</text>
-  <rect x="834" y="202" width="182" height="86" rx="10" fill="#111827" stroke="#374151"/>
-  <text x="925" y="238" text-anchor="middle" class="mono light" font-size="15">~/.claude/skills</text>
-  <text x="925" y="264" text-anchor="middle" class="dim" font-size="13">symlinks to source</text>
-  <rect x="834" y="374" width="182" height="86" rx="10" fill="#ffffff" stroke="#d1d5db"/>
-  <text x="925" y="410" text-anchor="middle" class="mono" font-size="15">~/.codex/skills</text>
-  <text x="925" y="436" text-anchor="middle" class="small">sanitized copies</text>
+    <g transform="translate(30,306)">
+      <rect width="360" height="64" rx="10" fill="#161b22" stroke="#c084fc" stroke-width="1.5"/>
+      <text x="20" y="28" fill="#c084fc" font-size="16" font-weight="700">skills/done-gate/SKILL.md</text>
+      <text x="20" y="50" fill="#9aa4b2" font-size="13">built-done vs useful-done gate</text>
+    </g>
 
-  <line x1="214" y1="218" x2="342" y2="223" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
-  <line x1="214" y1="328" x2="342" y2="341" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
-  <line x1="214" y1="438" x2="342" y2="459" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
-  <line x1="502" y1="223" x2="546" y2="221" stroke="#6b7280" stroke-width="1.8" marker-end="url(#arrow-gray)"/>
-  <line x1="502" y1="341" x2="546" y2="341" stroke="#6b7280" stroke-width="1.8" marker-end="url(#arrow-gray)"/>
-  <line x1="502" y1="459" x2="546" y2="461" stroke="#6b7280" stroke-width="1.8" marker-end="url(#arrow-gray)"/>
-  <path d="M 690 461 C 742 461, 748 245, 832 245" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
-  <path d="M 690 461 C 746 461, 752 417, 832 417" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <g transform="translate(30,400)">
+      <rect width="360" height="124" rx="10" fill="#0f1620" stroke="#30363d" stroke-width="1.2"/>
+      <text x="20" y="32" fill="#e6edf3" font-size="15" font-weight="600">scripts/install.py</text>
+      <text x="20" y="58" fill="#9aa4b2" font-size="12.5">claude → symlink · codex → sanitized copy</text>
+      <text x="20" y="82" fill="#9aa4b2" font-size="12.5">validate.py · smoke.py</text>
+      <text x="20" y="106" fill="#9aa4b2" font-size="12.5">eval/ fixtures per skill</text>
+    </g>
+  </g>
 
-  <g transform="translate(56,612)">
-    <line x1="0" y1="0" x2="36" y2="0" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
-    <text x="46" y="5" class="small">protocol or symlink flow</text>
-    <line x1="240" y1="0" x2="276" y2="0" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
-    <text x="286" y="5" class="small">generated copy flow</text>
-    <line x1="470" y1="0" x2="506" y2="0" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow-gray)"/>
-    <text x="516" y="5" class="small">verification flow</text>
+  <!-- arrows -->
+  <g stroke="#6e7681" stroke-width="2" fill="none">
+    <path d="M500,250 L640,210" marker-end="url(#arrow)"/>
+    <path d="M500,400 L640,430" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- install targets -->
+  <g transform="translate(660,150)">
+    <rect width="360" height="130" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="24" y="40" fill="#e6edf3" font-size="17" font-weight="700">~/.claude/skills/ (symlink)</text>
+    <text x="24" y="68" fill="#9aa4b2" font-size="13">live edits, no copy drift</text>
+    <text x="24" y="98" fill="#9aa4b2" font-size="13">/decide · /anneal · /compass · /done-gate</text>
+  </g>
+
+  <g transform="translate(660,370)">
+    <rect width="360" height="130" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="24" y="40" fill="#e6edf3" font-size="17" font-weight="700">~/.codex/ (sanitized copy)</text>
+    <text x="24" y="68" fill="#9aa4b2" font-size="13">Codex-compatible frontmatter</text>
+    <text x="24" y="98" fill="#9aa4b2" font-size="13">generated, not symlinked</text>
   </g>
 </svg>

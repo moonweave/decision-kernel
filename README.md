@@ -4,10 +4,11 @@
 
 **A judgment gate for coding agents.**
 
-Decision Kernel is three local Claude/Codex skills that make agent decisions
+Decision Kernel is four local Claude/Codex skills that make agent decisions
 inspectable before large diffs land. It is built for Claude Code and Codex
-users who want agent decision-making, drift audits, and evidence-gated
-technical decisions to happen inside the repo instead of in vague chat.
+users who want agent decision-making, drift audits, evidence-gated technical
+decisions, and an honest "is this really done?" gate to happen inside the repo
+instead of in vague chat.
 
 <img src="assets/decision-kernel-mobile-card.png" alt="Decision Kernel compact card" width="340">
 
@@ -19,9 +20,10 @@ Agents fail most often at judgment boundaries: committing to the wrong direction
 continuing after drift, or deciding from weak evidence. Decision Kernel gives
 those moments a short local protocol:
 
-1. **Measure the fork** before building the wrong thing.
-2. **Audit drift and rot** before a long session compounds mistakes.
-3. **Decide with evidence** instead of confident guesswork.
+1. **Decide with evidence** instead of confident guesswork.
+2. **Measure the fork** before building the wrong thing.
+3. **Audit drift and rot** before a long session compounds mistakes.
+4. **Gate "done"** so finished means useful-done, not just tests-pass.
 
 This repository packages those protocols as local Claude/Codex skills. It does
 not replace engineering judgment; it makes that judgment inspectable. Search
@@ -31,9 +33,10 @@ evidence-backed technical choices.
 
 | Moment | Skill | Product Job |
 | --- | --- | --- |
+| "What is the right technical choice?" | [`decide`](skills/decide) | Combine local project context with current source-backed evidence. |
 | "Which direction should we build?" | [`anneal`](skills/anneal) | Turn alternatives into a cheap measurable comparison. |
 | "Has this session gone off-track?" | [`compass`](skills/compass) | Check drift, accumulated work, stale evidence, and codebase rot. |
-| "What is the right technical choice?" | [`decide`](skills/decide) | Combine local project context with current source-backed evidence. |
+| "Is this actually done?" | [`done-gate`](skills/done-gate) | Check built-done vs useful-done; refuse a verdict without signal. |
 
 ## Quick Start
 
@@ -48,9 +51,10 @@ python3 scripts/install.py --target all --apply
 Then invoke the protocols when an agent is about to make a judgment-heavy move:
 
 ```text
+/decide should this project use a src layout?
 /anneal choose between table, graph, and cards for an inventory dashboard
 /compass audit this session against the original goal
-/decide should this project use a src layout?
+/done-gate is the MCP server I just finished actually usable?
 ```
 
 ## Example Workflow
@@ -74,10 +78,14 @@ Later in the same session:
 ```text
 /compass harden local Claude/Codex skills
 /decide should this stale spec file be deleted?
+/done-gate I said the dashboard is done — is it?
 ```
 
 `compass` checks whether the work still matches the session intent. `decide`
 requires local repo context plus current sources before making the deletion call.
+`done-gate` runs at the finish line: it separates built-done (tests pass) from
+useful-done (a real consumer gets value), and reports a stale ROADMAP claim or a
+README that contradicts its own scorecard rather than rubber-stamping "done."
 
 See [docs/examples](docs/examples) for concrete representative runs covering
 all three protocols: measurable direction choice, session drift audit, and
@@ -89,7 +97,7 @@ evidence-gated technical decision.
 
 ![Decision Kernel annotated hero](assets/decision-kernel-annotated-hero.png)
 
-## The Three Protocols
+## The Four Protocols
 
 ### `anneal` - Measure Before You Commit
 
@@ -129,6 +137,25 @@ Best for:
 - migration decisions
 - deletion or deprecation calls
 - contested engineering practices
+
+### `done-gate` - Built-Done vs Useful-Done
+
+Use at the completion boundary, right after the agent declares work "done."
+`done-gate` checks whether it is built-done (tests pass) or useful-done (a real
+consumer gets real value), and refuses to emit a verdict when there is no
+measurable signal rather than rubber-stamping it. Read-only — it diagnoses,
+never fixes.
+
+Best for:
+
+- a server/CLI that passes tests but no host is wired to call it
+- a ROADMAP or README whose claims drifted from what actually landed
+- score/number contradictions across files after heavy churn
+- telling "shelved on purpose" apart from "silently unfinished"
+
+It is distinct from `compass`: compass audits mid-session drift against the
+original intent; done-gate runs at the finish line against what this specific
+piece of work was supposed to deliver.
 
 ## Install
 
@@ -215,9 +242,10 @@ structure and installable skill files.
 
 ```text
 skills/
+  decide/      # evidence-gated technical decisions
   anneal/      # measurable fork comparison
   compass/     # session drift and repo rot audit
-  decide/      # evidence-gated technical decisions
+  done-gate/   # completion-boundary built-done vs useful-done gate
 scripts/
   install.py   # Claude symlink install + Codex sanitized copy install
   smoke.py     # local and live smoke checks
@@ -226,6 +254,7 @@ tests/smoke/
   anneal.md
   compass.md
   decide.md
+  done-gate.md
 docs/
   architecture.md
   distribution.md
@@ -260,6 +289,7 @@ Edit skills only inside this repository:
 skills/anneal/SKILL.md
 skills/compass/SKILL.md
 skills/decide/SKILL.md
+skills/done-gate/SKILL.md
 ```
 
 Before committing:
