@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-labelledby="title desc">
+  <title id="title">Decision Kernel protocol strip</title>
+  <desc id="desc">Three local skills form a judgment gate for coding agents: anneal, compass, and decide.</desc>
+  <style>
+    text {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      fill: #111827;
+    }
+    .eyebrow { font-size: 30px; font-weight: 750; fill: #374151; }
+    .headline { font-size: 52px; font-weight: 800; }
+    .label { font-size: 44px; font-weight: 800; }
+    .cmd { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 30px; fill: #374151; }
+    .small { font-size: 24px; fill: #6b7280; }
+    .white { fill: #ffffff; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#6b7280"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" rx="28" fill="#ffffff"/>
+  <rect x="18" y="18" width="1164" height="324" rx="24" fill="#f8fafc" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <text x="70" y="82" class="eyebrow">A judgment gate for coding agents</text>
+  <text x="70" y="142" class="headline">Measure. Audit. Decide.</text>
+
+  <g transform="translate(70,202)" filter="url(#shadow)">
+    <rect x="0" y="0" width="282" height="96" rx="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+    <circle cx="46" cy="48" r="25" fill="#2563eb"/>
+    <text x="46" y="58" text-anchor="middle" class="white" font-size="28" font-weight="800">1</text>
+    <text x="88" y="43" class="label">Fork</text>
+    <text x="88" y="76" class="cmd">/anneal</text>
+  </g>
+
+  <line x1="368" y1="250" x2="452" y2="250" stroke="#6b7280" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(470,202)" filter="url(#shadow)">
+    <rect x="0" y="0" width="282" height="96" rx="16" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="2"/>
+    <circle cx="46" cy="48" r="25" fill="#16a34a"/>
+    <text x="46" y="58" text-anchor="middle" class="white" font-size="28" font-weight="800">2</text>
+    <text x="88" y="43" class="label">Drift</text>
+    <text x="88" y="76" class="cmd">/compass</text>
+  </g>
+
+  <line x1="768" y1="250" x2="852" y2="250" stroke="#6b7280" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(870,202)" filter="url(#shadow)">
+    <rect x="0" y="0" width="260" height="96" rx="16" fill="#faf5ff" stroke="#e9d5ff" stroke-width="2"/>
+    <circle cx="46" cy="48" r="25" fill="#9333ea"/>
+    <text x="46" y="58" text-anchor="middle" class="white" font-size="28" font-weight="800">3</text>
+    <text x="88" y="43" class="label">Call</text>
+    <text x="88" y="76" class="cmd">/decide</text>
+  </g>
+</svg>

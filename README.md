@@ -2,16 +2,12 @@
 
 # Decision Kernel
 
-**Measure forks. Audit drift. Decide with evidence.**
+**A judgment gate for coding agents.**
 
-A compact decision layer for agentic coding workflows.
+Decision Kernel is three local Claude/Codex skills that make agent decisions
+inspectable before large diffs land.
 
-[![Status](https://img.shields.io/badge/status-local--first-blue)](#status)
-[![Claude](https://img.shields.io/badge/Claude-Code%20skills-black)](#install)
-[![Codex](https://img.shields.io/badge/Codex-skills-black)](#install)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-
-![Decision Kernel annotated hero](assets/decision-kernel-annotated-hero.png)
+![Decision Kernel protocol strip](assets/decision-kernel-protocol-strip.png)
 
 </div>
 
@@ -59,6 +55,10 @@ Later in the same session:
 
 `compass` checks whether the work still matches the session intent. `decide`
 requires local repo context plus current sources before making the deletion call.
+
+## Visual Model
+
+![Decision Kernel annotated hero](assets/decision-kernel-annotated-hero.png)
 
 ## The Three Protocols
 
