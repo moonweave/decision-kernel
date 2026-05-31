@@ -2,7 +2,7 @@
 
 ## Summary
 
-Created `agent-decision-skills` as the source-of-truth monorepo for `anneal`,
+Created `decision-kernel` as the source-of-truth monorepo for `anneal`,
 `compass`, and `decide`.
 
 ## Completed
@@ -29,9 +29,9 @@ smoke local ok
 Installed Claude paths:
 
 ```text
-~/.claude/skills/anneal -> ~/ai-skills-dev/agent-decision-skills/skills/anneal
-~/.claude/skills/compass -> ~/ai-skills-dev/agent-decision-skills/skills/compass
-~/.claude/skills/decide -> ~/ai-skills-dev/agent-decision-skills/skills/decide
+~/.claude/skills/anneal -> ~/ai-skills-dev/decision-kernel/skills/anneal
+~/.claude/skills/compass -> ~/ai-skills-dev/decision-kernel/skills/compass
+~/.claude/skills/decide -> ~/ai-skills-dev/decision-kernel/skills/decide
 ```
 
 Installed Codex paths:
