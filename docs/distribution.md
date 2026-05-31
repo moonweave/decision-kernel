@@ -38,7 +38,7 @@ https://github.com/moonweave/decision-kernel
 Release URL:
 
 ```text
-https://github.com/moonweave/decision-kernel/releases/tag/v0.1.3
+https://github.com/moonweave/decision-kernel/releases/tag/v0.1.4
 ```
 
 Primary image:
