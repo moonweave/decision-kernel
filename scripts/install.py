@@ -8,7 +8,7 @@ import shutil
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ("anneal", "compass", "decide")
+SKILLS = ("anneal", "compass", "decide", "done-gate")
 CLAUDE_DIR = Path.home() / ".claude" / "skills"
 CODEX_DIR = Path.home() / ".codex" / "skills"
 
