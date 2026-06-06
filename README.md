@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src=".github/assets/decision-kernel-mark.svg" alt="Decision Kernel mark" width="96">
+<img src=".github/assets/decision-kernel-mark-512.png" alt="Decision Kernel mark" width="96">
 
 # Decision Kernel
 
