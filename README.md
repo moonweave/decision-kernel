@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src=".github/assets/decision-kernel-mark.svg" alt="Decision Kernel mark" width="96">
+
 # Decision Kernel
 
 **A judgment gate for coding agents.**
@@ -43,7 +45,7 @@ evidence-backed technical choices.
 Install both Claude Code and Codex skill copies:
 
 ```bash
-git clone https://github.com/moonweave/decision-kernel.git
+git clone https://github.com/Moonweave-Systems/decision-kernel.git
 cd decision-kernel
 python3 scripts/install.py --target all --apply
 ```
@@ -162,7 +164,7 @@ piece of work was supposed to deliver.
 Clone the repo:
 
 ```bash
-git clone https://github.com/moonweave/decision-kernel.git
+git clone https://github.com/Moonweave-Systems/decision-kernel.git
 cd decision-kernel
 ```
 

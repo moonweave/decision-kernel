@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Decision Kernel mark</title>
+  <desc id="desc">A kernel ring with a decision fork.</desc>
+  <defs>
+    <linearGradient id="g" x1="88" y1="424" x2="424" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="0.5" stop-color="#2f81f7"/>
+      <stop offset="1" stop-color="#a371f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="#0b1020"/>
+  <circle cx="256" cy="256" r="156" fill="none" stroke="#303d68" stroke-width="20"/>
+  <circle cx="256" cy="256" r="92" fill="#111b35" stroke="url(#g)" stroke-width="18"/>
+  <path d="M256 164v92l-70 70M256 256l72 72M256 256h110" fill="none" stroke="#e6edf3" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="256" cy="164" r="24" fill="#2f81f7"/>
+  <circle cx="186" cy="326" r="24" fill="#2dd4bf"/>
+  <circle cx="328" cy="328" r="24" fill="#a371f7"/>
+  <circle cx="366" cy="256" r="20" fill="#f2cc60"/>
+</svg>
