@@ -1,27 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640">
-  <defs>
-    <radialGradient id="bg" cx="22%" cy="20%" r="90%">
-      <stop offset="0" stop-color="#182a5a"/>
-      <stop offset="0.55" stop-color="#0b1020"/>
-      <stop offset="1" stop-color="#05070f"/>
-    </radialGradient>
-    <linearGradient id="g" x1="120" y1="560" x2="580" y2="100" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#2dd4bf"/>
-      <stop offset="0.5" stop-color="#2f81f7"/>
-      <stop offset="1" stop-color="#a371f7"/>
-    </linearGradient>
-  </defs>
-  <rect width="1280" height="640" rx="56" fill="url(#bg)"/>
-  <g transform="translate(120 116) scale(.8)">
-    <circle cx="256" cy="256" r="156" fill="none" stroke="#303d68" stroke-width="20"/>
-    <circle cx="256" cy="256" r="92" fill="#111b35" stroke="url(#g)" stroke-width="18"/>
-    <path d="M256 164v92l-70 70M256 256l72 72M256 256h110" fill="none" stroke="#e6edf3" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="256" cy="164" r="24" fill="#2f81f7"/>
-    <circle cx="186" cy="326" r="24" fill="#2dd4bf"/>
-    <circle cx="328" cy="328" r="24" fill="#a371f7"/>
-    <circle cx="366" cy="256" r="20" fill="#f2cc60"/>
+  <rect width="1280" height="640" fill="#f7f8fa"/>
+  <path d="M80 80h1120v480H80z" fill="#ffffff" stroke="#d9dee8" stroke-width="2"/>
+  <path d="M120 128h1040M120 512h1040" stroke="#e6eaf0" stroke-width="2"/>
+  <text x="120" y="134" fill="#667085" font-family="Inter, Arial, sans-serif" font-size="22" letter-spacing="0">Moonweave Systems</text>
+  <g transform="translate(128 172) scale(.78)">
+    <circle cx="256" cy="256" r="176" fill="#ffffff" stroke="#d9dee8" stroke-width="12"/>
+    <circle cx="256" cy="256" r="104" fill="none" stroke="#1f2937" stroke-width="16"/>
+    <path d="M256 170v86l-74 76M256 256l74 74M256 256h112" fill="none" stroke="#1f2937" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="256" cy="170" r="20" fill="#ffffff" stroke="#2f5f9f" stroke-width="10"/>
+    <circle cx="182" cy="332" r="20" fill="#ffffff" stroke="#2f5f9f" stroke-width="10"/>
+    <circle cx="330" cy="330" r="20" fill="#ffffff" stroke="#2f5f9f" stroke-width="10"/>
+    <circle cx="368" cy="256" r="18" fill="#ffffff" stroke="#2f5f9f" stroke-width="10"/>
   </g>
-  <text x="560" y="250" fill="#f0f6fc" font-family="Inter, Arial, sans-serif" font-size="82" font-weight="800">Decision Kernel</text>
-  <text x="564" y="324" fill="#9fb3c8" font-family="Inter, Arial, sans-serif" font-size="34">Evidence-gated decisions for coding agents</text>
-  <text x="564" y="392" fill="#58a6ff" font-family="Inter, Arial, sans-serif" font-size="28">decide · anneal · compass · done-gate</text>
+  <text x="560" y="260" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="760">Decision Kernel</text>
+  <text x="564" y="326" fill="#4b5563" font-family="Inter, Arial, sans-serif" font-size="32">Evidence-gated decisions for coding agents</text>
+  <text x="564" y="388" fill="#2f5f9f" font-family="Inter, Arial, sans-serif" font-size="24">decide / anneal / compass / done-gate</text>
+  <path d="M564 440h360" stroke="#d9dee8" stroke-width="2"/>
 </svg>
